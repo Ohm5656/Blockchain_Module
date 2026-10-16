@@ -1,0 +1,55 @@
+{
+  "name": "blockchain-module",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "exports": {
+    ".": {
+      "browser": null,
+      "node": "./Blockchain/fuji/index.ts"
+    },
+    "./persistence": {
+      "browser": null,
+      "node": "./Blockchain/persistence/index.ts"
+    },
+    "./verification": {
+      "browser": null,
+      "node": "./Blockchain/verification/index.ts"
+    },
+    "./recovery": {
+      "browser": null,
+      "node": "./Blockchain/recovery/index.ts"
+    },
+    "./runner": {
+      "browser": null,
+      "node": "./Blockchain/runner/index.ts"
+    }
+  },
+  "dependencies": {
+    "pg": "^8.23.1",
+    "viem": "^2.57.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "embedded-postgres": "^18.4.0-beta.17",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test Blockchain/tests/*.test.ts",
+    "test:persistence": "tsx --test Blockchain/tests/persistence.test.ts",
+    "test:verification": "tsx --test Blockchain/tests/verification.test.ts",
+    "test:recovery": "tsx --test Blockchain/tests/recovery.test.ts",
+    "test:runner": "tsx --test Blockchain/tests/runner.test.ts",
+    "fuji:health": "tsx --env-file-if-exists=.env.local Blockchain/scripts/fuji-health.ts",
+    "fuji:smoke": "tsx --env-file-if-exists=.env.local Blockchain/scripts/fuji-smoke.ts",
+    "settlement:smoke": "tsx --env-file-if-exists=.env.local Blockchain/scripts/settlement-smoke.ts",
+    "settlement:verify": "tsx --env-file-if-exists=.env.local Blockchain/scripts/verify-settlement.ts",
+    "settlement:recover": "tsx --env-file-if-exists=.env.local Blockchain/scripts/recover-settlement.ts",
+    "settlement:worker": "tsx --env-file-if-exists=.env.local Blockchain/scripts/settlement-worker.ts"
+  }
+}
