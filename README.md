@@ -1,8 +1,18 @@
 # Avalanche Fuji Settlement Module
 
-โมดูล settlement ฝั่ง backend สำหรับส่งและตรวจสอบ **Circle Test USDC บน Avalanche Fuji C-Chain** โดยออกแบบให้ทนต่อ process crash, RPC timeout, request ซ้ำ และ concurrent workers โดยไม่สร้างธุรกรรมซ้ำหรือเปลี่ยนจำนวนเงินเอง
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-22-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js 22">
+  <img src="https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Strict">
+  <img src="https://img.shields.io/badge/Avalanche-Fuji-E84142?style=for-the-badge&logo=avalanche&logoColor=white" alt="Avalanche Fuji">
+  <img src="https://img.shields.io/badge/viem-EVM_Client-F4E59D?style=for-the-badge&logo=ethereum&logoColor=black" alt="viem EVM Client">
+  <img src="https://img.shields.io/badge/PostgreSQL-Persistence-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Supabase-Compatible-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase Compatible">
+  <img src="https://img.shields.io/badge/Circle-Test_USDC-2775CA?style=for-the-badge&logo=circle&logoColor=white" alt="Circle Test USDC">
+</p>
 
-> TESTNET ONLY — repository นี้ไม่รองรับ Avalanche mainnet, real USDC หรือเงินจริง
+A backend settlement module for sending and verifying **Circle Test USDC on Avalanche Fuji C-Chain**. It is designed to remain safe across process crashes, RPC timeouts, duplicate requests, and concurrent workers without creating duplicate transactions or changing the authoritative settlement amount.
+
+> **TESTNET ONLY** — This repository does not support Avalanche mainnet, real USDC, or real funds.
 
 ## Tech Stack
 
